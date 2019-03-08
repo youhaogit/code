@@ -1,8 +1,8 @@
-package Leetcode;
+package Leetcode.p706_DesignHashMap;
 
 import java.util.Objects;
 
-public class _706_DesignHashMap {
+public class Solution {
 
     static class MyHashMap {
 

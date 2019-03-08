@@ -1,11 +1,11 @@
-package Leetcode;
+package Leetcode.p763_PartitionLabels;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class _763_PartitionLabels {
+public class Solution {
 
 //    Input: S = "ababcbacadefegdehijhklij"
 //    Output: [9,7,8]

@@ -1,8 +1,8 @@
-package Leetcode;
+package Leetcode.p438_FindAllAnagramsinaString;
 
 import java.util.*;
 
-public class _438_FindAllAnagramsinaString {
+public class Solution {
 //    Input:
 //    s: "cbaebabacd" p: "abc"
 //

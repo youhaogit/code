@@ -1,6 +1,6 @@
-package Leetcode;
+package Leetcode.p926_FlipStringtoMonotoneIncreasing;
 
-public class _926_FlipStringtoMonotoneIncreasing {
+public class Solution {
 
 //    public int minFlipsMonoIncr(String S) {
 //

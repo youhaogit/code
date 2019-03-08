@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.p223_RectangleArea;
 
 import java.util.PriorityQueue;
 

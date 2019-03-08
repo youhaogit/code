@@ -1,8 +1,8 @@
-package Leetcode;
+package Leetcode.p146_LRUCache;
 
 import java.util.*;
 
-public class _146_LRUCache {
+public class Solution {
 
     class LRUCache extends LinkedHashMap<Integer, Integer> {
 

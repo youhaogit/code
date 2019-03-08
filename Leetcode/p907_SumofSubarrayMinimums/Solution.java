@@ -1,6 +1,6 @@
-package Leetcode;
+package Leetcode.p907_SumofSubarrayMinimums;
 
-public class _907_SumofSubarrayMinimums {
+public class Solution {
 
     public static int sumSubarrayMins(int[] A) {
         if(A == null || A.length == 0) {
