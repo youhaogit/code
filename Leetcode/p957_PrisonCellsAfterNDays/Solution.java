@@ -1,5 +1,9 @@
 package Leetcode.p957_PrisonCellsAfterNDays;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Solution {
 
     public int[] prisonAfterNDays(int[] cells, int N) {
@@ -7,27 +11,23 @@ public class Solution {
             return cells;
         }
 
-        //temp array to record the state of previous day
-        int[] temp = new int[cells.length];
-        System.arraycopy(cells, 0, temp, 0, cells.length);
+        Map<String, Integer> map = new HashMap<>();
 
-        for(int i = 1; i <= N; i++) {
-            int[] cur = new int[cells.length];
-            for(int j = 0; j < cells.length; j++) {
-                if(j == 0 || j == cells.length - 1) {
-                    cur[j] = 0;
-                }else {
-                    if((temp[j - 1] == 1 && temp[j + 1] == 1) || (temp[j - 1] == 0 && temp[j + 1] == 0)) {
-                        cur[j] = 1;
-                    }else {
-                        cur[j] = 0;
-                    }
-                }
+        while(N > 0) {
+            map.put(Arrays.toString(cells), N--);
+
+            int[] cur = new int[8];
+            for(int i = 1; i < 7; i++) {
+                cur[i] = (cells[i - 1] == cells[i + 1]) ? 1 : 0;
             }
-            temp = cur;
+            cells = cur;
+
+            if(map.containsKey(Arrays.toString(cells))) {
+                N %= (map.get(Arrays.toString(cells)) - N);
+            }
         }
 
-        return temp;
+        return cells;
 
     }
 
@@ -43,6 +43,8 @@ public class Solution {
     public static void main(String[] args) {
         Solution s = new Solution();
         int[] cells = {0,1,0,1,1,0,0,1};
-        System.out.println(s.prisonAfterNDays(cells, 7));
+        System.out.println(cells.toString());
+        System.out.println(Arrays.toString(cells));
+//        System.out.println(s.prisonAfterNDays(cells, 7));
     }
 }
