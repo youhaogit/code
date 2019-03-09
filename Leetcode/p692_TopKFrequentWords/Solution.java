@@ -64,7 +64,36 @@ public class Solution {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
+        List<List<String>> buckets = new ArrayList<>();
+        for(int i = 0; i <= words.length; i++) {
+            buckets.add(new ArrayList<>());
+        }
 
+        for(String word: map.keySet()) {
+            int key = map.get(word);
+            buckets.get(key).add(word);
+        }
+
+        for(int i = words.length; i >= 0; i--) {
+            List<String> bucket = buckets.get(i);
+            if(!bucket.isEmpty()) {
+                Collections.sort(bucket, (a, b) -> {
+                    return a.compareTo(b);
+                });
+
+                if(bucket.size() > k) {
+                    result.addAll(bucket.subList(0, k));
+                    return result;
+                }
+
+                k -= bucket.size();
+                result.addAll(bucket);
+
+                if(k == 0) {
+                    break;
+                }
+            }
+        }
 
         return result;
     }
