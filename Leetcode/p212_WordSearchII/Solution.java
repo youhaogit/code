@@ -68,8 +68,10 @@ public class Solution {
             root = root.children[idx];
             if(root.word != null) {
                 result.add(root.word);
+                // don't add repeated word for same prefix so far
                 root.word = null;
-                return;
+
+                // don't just return, coz it's not the end. A node with word doesn't mean it is leaf node
             }
 
             visited[i][j] = true;
