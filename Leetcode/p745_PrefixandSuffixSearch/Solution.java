@@ -14,16 +14,16 @@ public class Solution {
 //    WordFilter.f("a", "e") // returns 0
 //    WordFilter.f("b", "") // returns -1
 
-    class WordFilter {
-
-        public WordFilter(String[] words) {
-
-        }
-
-        public int f(String prefix, String suffix) {
-
-        }
-    }
+//    class WordFilter {
+//
+//        public WordFilter(String[] words) {
+//
+//        }
+//
+//        public int f(String prefix, String suffix) {
+//
+//        }
+//    }
 
 
     public static void main(String[] args) {
