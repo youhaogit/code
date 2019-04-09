@@ -29,8 +29,6 @@ public class Solution {
             dfs(cur.right);
             sb.append(")");
         }
-
-
     }
 
 
