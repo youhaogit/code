@@ -32,8 +32,32 @@ public class JumpGame {
 
     }
 
+    public static boolean canJumpI(int[] nums) {
+        // dp solution
+        // dp[i] = 0 means unkown, dp[i] = 1 means good, dp[i] = -1 means bad
+        if(nums == null || nums.length == 0) {
+            return false;
+        }
+
+        int[] dp = new int[nums.length];
+        dp[nums.length - 1] = 1;
+
+        for(int i = nums.length - 2; i >= 0; i--) {
+            int maxStep = Math.min(nums[i], nums.length - 1);
+            for(int j = i + 1; j <= i + maxStep; j++) {
+                if(dp[j] == 1) {
+                    dp[i] = 1;
+                    break;
+                }
+            }
+        }
+
+        return dp[0] == 1;
+    }
+
     public static void main(String[] args) {
-        int[] nums1 = {3,2,1,0,4};
+        int[] nums1 = {2,3,1,1,4};
         System.out.println(canJump(nums1));
+        System.out.println(canJumpI(nums1));
     }
 }
